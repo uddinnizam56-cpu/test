@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@keyframes scrap-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-scrap-marquee {
+  animation: scrap-marquee-scroll 34s linear infinite;
+  will-change: transform;
+}
+
+.animate-scrap-marquee-paused,
+.scrap-marquee-group:hover .animate-scrap-marquee,
+.scrap-marquee-group:focus-within .animate-scrap-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scrap-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
